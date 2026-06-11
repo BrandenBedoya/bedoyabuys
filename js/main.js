@@ -32,7 +32,7 @@
 
   /* --- Reveal-on-scroll animations --- */
   const revealEls = document.querySelectorAll(
-    ".section__head, .card, .tile, .about__content, .about__media, .hero__content, .hero__media"
+    ".section__head, .statcard, .phone, .catgroup__title, .brands li, .about__content, .about__media, .hero__content, .hero__media"
   );
   revealEls.forEach((el) => el.classList.add("reveal"));
 
