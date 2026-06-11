@@ -54,6 +54,11 @@
     revealEls.forEach((el) => el.classList.add("visible"));
   }
 
+  /* --- Brand carousel: clone first row into the second (reverse) row --- */
+  const firstTrack = document.querySelector(".marquee__track");
+  const cloneTarget = document.getElementById("marqueeClone");
+  if (firstTrack && cloneTarget) cloneTarget.innerHTML = firstTrack.innerHTML;
+
   /* --- Current year in footer --- */
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();

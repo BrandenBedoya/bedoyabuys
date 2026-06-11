@@ -226,6 +226,34 @@ ul { list-style: none; }
 }
 
 /* ---------- BRANDS ---------- */
+/* Moving logo carousel */
+.marquee {
+  overflow: hidden; width: 100%; padding: 8px 0; margin-bottom: 18px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee__track {
+  display: flex; align-items: center; gap: 64px; width: max-content;
+  animation: marquee 32s linear infinite;
+}
+.marquee--rev .marquee__track { animation-direction: reverse; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.logo { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; }
+.logo img {
+  height: 44px; width: auto; max-width: 170px; object-fit: contain;
+  opacity: .55; filter: grayscale(100%);
+  transition: opacity .25s ease, filter .25s ease;
+}
+.logo img:hover { opacity: 1; filter: grayscale(0); }
+/* Square logos carry baked-in whitespace — size up so they read as large as the wide ones */
+.logo img[src*="ninja"], .logo img[src*="bobandbrad"] { height: 68px; max-width: 90px; }
+
+.brands__more {
+  text-align: center; color: var(--ink-soft); font-family: var(--font-head);
+  font-weight: 600; margin: 24px 0 18px;
+}
 .brands {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; max-width: 880px; margin: 0 auto;
 }
@@ -260,9 +288,18 @@ ul { list-style: none; }
 /* ---------- FOOTER ---------- */
 .footer { background: var(--ink); color: var(--white); padding: 48px 0; }
 .footer__inner { display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
-.footer__social { display: flex; gap: 26px; flex-wrap: wrap; }
-.footer__social a { font-weight: 500; opacity: .85; transition: opacity .2s, color .2s; }
-.footer__social a:hover { opacity: 1; color: var(--accent-2); }
+.footer__social { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.social {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,.08); color: var(--white);
+  transition: background .2s ease, transform .2s ease;
+}
+.social svg { width: 20px; height: 20px; fill: currentColor; }
+.social:hover {
+  background: linear-gradient(100deg, var(--accent), var(--accent-2));
+  transform: translateY(-3px);
+}
 .footer__copy { font-size: .85rem; opacity: .55; }
 
 /* =================================================================
