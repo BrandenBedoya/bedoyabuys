@@ -61,9 +61,11 @@ BedoyaBuys Website/
    *(These came from real analytics screenshots in the Canva export: 1.82M Pinterest
    impressions, $50,043.72 total revenue, 1.49M IG reach.)*
 6. **Video Samples** — iPhone-mockup phones grouped into **4 categories**, pill titles, 5 per row.
-   Each phone is a clickable thumbnail (image fills the frame) that **links to the Amazon
-   storefront** (`https://a.co/d/0cUAedgh`) with a play-badge hover affordance. *(We tried inline
-   `<video>` players but reverted — no clips on hand, and they'd slow the page.)* Categories:
+   Each phone is a clickable thumbnail linking to its **specific Amazon review video** (vdp links),
+   with a play-badge hover affordance. *(We tried inline `<video>` players but reverted — no clips on
+   hand, and they'd slow the page.)* Product swaps made: VIZIO→iRobot Roomba, Doseno→Sports Water
+   Bottle, D&G→Versa Grips. **Roomba & Versa Grips show a "Photo coming soon" placeholder** until
+   their thumbnails are supplied (`work-roomba.jpg`, `work-versagrips.jpg`). Categories:
    - **Technology** (real): VIZIO 43" Smart TV, Nexar Dashcam, WavLink Docking Station, Logitech Litra Glow, Cell2Jack
    - **Health & Fitness** (real): Bchois Wrist Brace, Doseno Large Water Bottle, D&G Light Blue Pour Homme, Dyson Airwrap Co-anda2x™, Meister Box Glove Deodorizers
    - **Home** (⚠️ PLACEHOLDERS): iRobot Roomba, ACTIVE Laundry Detergent, Smeg Espresso, Brondell Air Purifier, HOPOPRO Shower Head
@@ -162,6 +164,12 @@ git add -A && git commit -m "your message" && git push
 
 ## ⏳ Outstanding To-Dos
 
+- [ ] **Two video thumbnails** — Roomba & Versa Grips currently show "Photo coming soon".
+      Drop `work-roomba.jpg` and `work-versagrips.jpg` (9:16) into `assets/images/`, then swap
+      the placeholder `<div class="phone__screen--empty">` for an `<img class="phone__screen">`
+      (+ the `phone__play` badge span) in the Technology / Health & Fitness blocks of `index.html`.
+- [ ] **Home & Misc product links/videos** — Branden to provide later (still placeholders).
+      Note: Roomba now lives in Technology, so the Home category's Roomba placeholder is a dup to resolve.
 - [ ] **Activate contact form** — submit the live form once; click FormSubmit's one-time
       confirmation email sent to BedoyaLLC@Gmail.com. (Until done, submissions won't deliver.)
 - [ ] **Home category videos** — supply 5 thumbnails, name them:
