@@ -220,6 +220,24 @@ ul { list-style: none; }
   width: 32%; max-width: 62px; height: 16px; background: #000;
   border-radius: 999px; z-index: 2;
 }
+/* Play button — revealed by JS only when a real video clip is present */
+.phone__play {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  z-index: 3; width: 54px; height: 54px; border: 0; border-radius: 50%; cursor: pointer;
+  background: rgba(20, 19, 31, .55); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: background .2s ease, transform .2s ease, opacity .2s ease;
+}
+.phone__play::before {
+  content: ""; width: 0; height: 0; margin-left: 4px;
+  border-style: solid; border-width: 9px 0 9px 15px;
+  border-color: transparent transparent transparent #fff;
+}
+.phone__play:hover { background: var(--accent); transform: translate(-50%, -50%) scale(1.08); }
+.phone.has-video .phone__play { opacity: 1; pointer-events: auto; }
+.phone.has-video.is-playing .phone__play { opacity: 0; pointer-events: none; }
+.phone.has-video video.phone__screen { cursor: pointer; }
 .phone figcaption {
   margin-top: 16px; font-family: var(--font-head); font-weight: 600;
   font-size: .92rem; color: var(--ink); line-height: 1.3;
