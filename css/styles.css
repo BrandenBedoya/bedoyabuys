@@ -315,7 +315,7 @@ ul { list-style: none; }
   background: linear-gradient(100deg, var(--accent), var(--accent-2));
   transform: translateY(-3px);
 }
-.about__social { margin-top: 32px; text-align: center; }
+.about__social { margin-top: 32px; width: 100%; }
 .about__social .social {
   background: var(--ink);
   color: var(--white);
