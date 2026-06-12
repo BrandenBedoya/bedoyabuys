@@ -54,40 +54,6 @@
     revealEls.forEach((el) => el.classList.add("visible"));
   }
 
-  /* --- Video Samples: click to play; show the play button only when a clip exists --- */
-  document.querySelectorAll(".phone").forEach(function (phone) {
-    const video = phone.querySelector("video.phone__screen");
-    const btn = phone.querySelector(".phone__play");
-    if (!video || !btn) return;
-
-    // Reveal the play button only once a real video file has loaded.
-    video.addEventListener("loadedmetadata", function () {
-      phone.classList.add("has-video");
-    });
-
-    function toggle() {
-      if (video.paused) {
-        video.muted = false;
-        const p = video.play();
-        if (p && p.catch) p.catch(function () {});
-      } else {
-        video.pause();
-      }
-    }
-    btn.addEventListener("click", toggle);
-    video.addEventListener("click", toggle);
-
-    video.addEventListener("play", function () {
-      // Only one clip plays at a time
-      document.querySelectorAll("video.phone__screen").forEach(function (v) {
-        if (v !== video) v.pause();
-      });
-      phone.classList.add("is-playing");
-    });
-    video.addEventListener("pause", function () { phone.classList.remove("is-playing"); });
-    video.addEventListener("ended", function () { phone.classList.remove("is-playing"); });
-  });
-
   /* --- Current year in footer --- */
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
