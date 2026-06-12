@@ -159,6 +159,11 @@ git add -A && git commit -m "your message" && git push
 
 ## ⏳ Outstanding To-Dos
 
+- [ ] **Add the actual video clips** — the 10 Tech & Health/Fitness phones are now inline
+      `<video>` players (poster = the JPG thumbnail). Drop MP4s in `assets/videos/` named
+      `work-vizio.mp4`, `work-nexar.mp4`, `work-wavlink.mp4`, `work-litra.mp4`, `work-cell2jack.mp4`,
+      `work-bchois.mp4`, `work-waterbottle.mp4`, `work-dolcegabbana.mp4`, `work-dyson.mp4`,
+      `work-meister.mp4`. The play button auto-appears once a clip loads. See `assets/videos/README.txt`.
 - [ ] **Activate contact form** — submit the live form once; click FormSubmit's one-time
       confirmation email sent to BedoyaLLC@Gmail.com. (Until done, submissions won't deliver.)
 - [ ] **Home category videos** — supply 5 thumbnails, name them:
